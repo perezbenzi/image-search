@@ -1,0 +1,23 @@
+.html {
+    box-sizing: content-box;
+}
+
+html * {
+    box-sizing: inherit;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(191, 191, 191);
+    padding: 22px;
+    border: solid 1px;
+    z-index: 2;
+    position: fixed;
+    width: 100%;
+}
+
+header input {
+    outline: none;
+    border: solid 1px rgb(0, 0, 0);
+}
