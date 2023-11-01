@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 function App() {
   const [photos, setPhotos] = useState([]);
-  const open = url => window.open(url)
+  const open = (url) => window.open(url);
   console.log({ photos });
 
   return (
@@ -32,10 +32,15 @@ function App() {
       </header>
       <div className="container">
         <div className="grid-container">
-          {photos.map(photo => 
-            <article key={photo.id} onClick={() => open(photos.links.html) }>
-            <img className="grid-item" src={photo.urls.regular}></img>
-            </article>)}
+          {photos.length === 0 ? (
+            <div className='not-found-message'>No se han encontrado resultados</div>
+          ) : (
+            photos.map((photo) => (
+              <article key={photo.id} onClick={() => open(photo.links.html)}>
+                <img className="grid-item" src={photo.urls.regular} alt="Foto" />
+              </article>
+            ))
+          )}
         </div>
       </div>
     </div>
